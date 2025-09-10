@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #Space removal utility
-#Removes spaces from the beginning of file names in the inputted directory
+#Removes spaces from the beginning and end of file names in the inputted directory
+#Created with the assistance of Copilot
 
 echo "Welcome to SRU - Space Removal Utility"
 echo "This utility removes spaces from the beginning of file names in the specified directory."
