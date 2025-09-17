@@ -10,13 +10,13 @@ echo "Welcome to BFMU - Bulk File Mover Utility"
 echo "This utility moves files from one directory to another."
 echo "Please enter the source directory path:"
 read src_dir
-if [ ! -d "src_dir" ]; then
+if [ ! -d "$src_dir" ]; then
     echo "Source directory does not exist...exiting"
     exit 1
 fi
 echo "Please enter the destination directory path:"
 read dest_dir
-if [ ! -d "dest_dir" ]; then
+if [ ! -d "$dest_dir" ]; then
     echo "Destination directory does not exist...exiting"
     exit 1
 fi
@@ -72,3 +72,8 @@ if [[ "$confirmation" != "y" ]]; then
     exit 0
 fi 
 
+echo "Searching for files..."
+find "$src_dir" -type f -name "*$file_ext" -exec mv {} "$dest_dir" \;
+
+echo "All files with extension '$file_ext' have been moved from '$src_dir' to '$dest_dir'."
+echo "Thank you for using BFMU. Goodbye!"
